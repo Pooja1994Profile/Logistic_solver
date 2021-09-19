@@ -4,8 +4,7 @@ from flask_cors import CORS, cross_origin
 import pickle
 import os
 
-application = Flask(__name__) # initializing a flask app
-app=application
+app = Flask(__name__) # initializing a flask app
 
 
 @app.route('/', methods=['GET'])  # route to display the home page
@@ -42,9 +41,9 @@ def index():
         return render_template('index.html')
 
 
-#port = int(os.getenv("PORT"))
+port = int(os.getenv("PORT"))
 
 if __name__ == "__main__":
     # app.run(host='127.0.0.1', port=8001, debug=True)
-    #app.run(host='0.0.0.0', port=port) # running the app
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=port) # running the app
+    # app.run(debug=True)
